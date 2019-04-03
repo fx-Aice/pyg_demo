@@ -91,3 +91,83 @@ ol,
 ul {
   list-style: none;
 }
+.layout {
+  height: 100vh;
+  width: 100vw;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+}
+.layout .pyg_header {
+  width: 100%;
+  height: 45px;
+  padding: 5px;
+  background-color: #fff;
+}
+.layout .pyg_content {
+  width: 100%;
+  flex: 1;
+  overflow: scroll;
+}
+.layout .pyg_content nav {
+  display: flex;
+  padding: 10px;
+  background-color: #fff;
+}
+.layout .pyg_content nav a {
+  display: block;
+  width: 25%;
+  text-align: center;
+  font-size: 14px;
+}
+.layout .pyg_content nav a img {
+  width: 50%;
+}
+.layout .pyg_content .goodsList {
+  margin-top: 10px;
+}
+.layout .pyg_content .goodsList .goodsItem .groupImg {
+  width: 100%;
+}
+.layout .pyg_content .goodsList .goodsItem .proBox {
+  width: 49%;
+  float: left;
+  background-color: #fff;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.layout .pyg_content .goodsList .goodsItem .proBox:nth-of-type(even) {
+  margin-left: 2%;
+}
+.layout .pyg_content .goodsList .goodsItem .proBox img {
+  width: 100%;
+}
+.layout .pyg_content .goodsList .goodsItem .proBox .proTitle {
+  font-size: 14px;
+  color: #000;
+}
+.layout .pyg_content .goodsList .goodsItem .proBox .proPrice {
+  font-size: 18px;
+  color: red;
+}
+.layout .pyg_content .goodsList .goodsItem .proBox .findGoods {
+  width: 80%;
+  display: block;
+  margin: 5px auto;
+}
+.layout .pyg_footer {
+  width: 100%;
+  height: 50px;
+}
+.layout .pyg_footer a span:nth-of-type(1) {
+  margin-bottom: 2px;
+}
+.layout .pyg_footer .shoppingCart span {
+  margin-bottom: 0;
+  font-size: 24px;
+}
+.layout .pyg_footer .shoppingCart div {
+  font-size: 12px;
+}

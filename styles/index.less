@@ -1,1 +1,98 @@
 @import 'reset.less';
+.layout{
+    height: 100vh;
+    width: 100vw;
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    // 顶部
+    .pyg_header{
+        width: 100%;
+        height: 45px;
+        // position: fixed;
+        // left: 0;
+        // top: 0;
+        padding: 5px;
+        background-color: #fff;
+    }
+    // 中部内容
+    .pyg_content{
+        width: 100%;
+        flex: 1;
+        overflow:scroll;
+        // 导航菜单栏
+        nav{
+            display: flex;
+            padding: 10px;
+            background-color: #fff;
+            a{
+                display: block;
+                width: 25%;
+                text-align: center;
+                font-size: 14px;
+                img{
+                    width: 50%;
+                }
+            }
+        }
+        // 商品列表
+        .goodsList{
+            margin-top: 10px;
+            .goodsItem{
+               .groupImg{
+                   width: 100%;
+               } 
+               .proBox{
+                   width: 49%;
+                   float: left;
+                   background-color: #fff;
+                   padding: 5px;
+                   margin-bottom: 5px;
+                   &:nth-of-type(even){
+                       margin-left: 2%;
+                   }
+                   img{
+                       width: 100%;
+                   }
+                   .proTitle{
+                       font-size: 14px;
+                       color: #000;
+                   }
+                   .proPrice{
+                       font-size: 18px;
+                       color: red;
+                   }
+                   .findGoods{
+                       width: 80%;
+                       display: block;
+                       margin: 5px auto;
+
+                   }
+               }
+            }
+        }
+    }
+    // 底部
+    .pyg_footer{
+        width: 100%;
+        height: 50px;
+        a{
+            span{
+                &:nth-of-type(1){
+                    margin-bottom: 2px;
+                }
+            }
+        }
+        .shoppingCart{
+            span{
+                margin-bottom: 0;
+                font-size: 24px;
+            }
+            div{
+                font-size: 12px;
+            }
+        }
+    }
+}

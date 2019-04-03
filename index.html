@@ -6,29 +6,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./lib/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./styles/">
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <link rel="stylesheet" href="./styles/index.css">
-    <title>29-品优购</title>
+    <title>fx-品优购</title>
 </head>
+
 <body>
     <div class="layout">
+        <!-- 顶部搜索框 -->
         <div class="pyg_header">
             <div class="mui-input-row mui-search">
                 <input type="search" class="mui-input-clear" placeholder="">
             </div>
         </div>
+        <!-- 中部内容 -->
         <div class="pyg_content">
+            <!-- 轮播图 -->
             <div class="pyg_banner">
-                
-            </div>
+                <div class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop pyg_bannerBox">
 
+                    </div>
+                    <div class="mui-slider-indicator pyg_indicator">
+
+                    </div>
+                </div>
+            </div>
+            <!-- nav菜单栏 -->
+            <nav>
+                <a href="#">
+                    <img src="./static/images/1.gif" alt="">
+                    <div>爆款手机</div>
+                </a>
+                <a href="#">
+                    <img src="./static/images/2.webp" alt="">
+                    <div>苏宁超市</div>
+                </a>
+                <a href="#">
+                    <img src="./static/images/3.webp" alt="">
+                    <div>生鲜超市</div>
+                </a>
+                <a href="#">
+                    <img src="./static/images/4.webp" alt="">
+                    <div>母婴育儿</div>
+                </a>
+            </nav>
+            <!-- 商品列表 -->
+            <div class="goodsList">
+              
+            </div>
         </div>
-        <div class="pyg_footer"></div>
+        <!-- 底部 -->
+        <div class="pyg_footer">
+            <nav class="mui-bar mui-bar-tab">
+                <a class="mui-tab-item mui-active" href="#tabbar">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <span class="mui-tab-label">首页</span>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-chat">
+                    <span class="mui-icon mui-icon-list"></span>
+                    <span class="mui-tab-label">分类</span>
+                </a>
+                <a class="mui-tab-item shoppingCart" href="#tabbar-with-contact">
+                    <span class="fa fa-shopping-cart"></span>
+                    <div class="mui-tab-label">购物车</div>
+                </a>
+                <a class="mui-tab-item" href="#tabbar-with-map">
+                    <span class="mui-icon mui-icon-contact"></span>
+                    <span class="mui-tab-label">我的</span>
+                </a>
+            </nav>
+        </div>
     </div>
 </body>
 
 </html>
+<!-- 商品列表 -->
+<script type="text/template" id="goodslistTemp" >
+    {{each data value index}}
+    <div class="goodsItem">
+            <img class="groupImg" src="{{value.group_img}}" alt="">
+            {{each value.goods item i}}
+            <div class="proBox">
+                <a href="#">
+                    <img src="{{item.goods_small_logo}}" alt="">
+                    <div class="mui-ellipsis-2 proTitle">{{item.goods_name}}</div>
+                    <div class="proPrice">￥{{item.goods_price}}</div>
+                </a>
+                <a class="mui-btn mui-btn-primary mui-btn-outlined findGoods">找相似</a>
+            </div>
+            {{/each}}
+        </div>
+    {{/each}}
+</script>
+<!-- 小圆点 -->
+<script type="text/template" id="indicatorTemp">
+    {{each data value index}}
+    <div class="mui-indicator {{index==0?'mui-active':''}}"></div>
+    {{/each}}
+</script>
+<!-- 轮播图的图 -->
+<script type="text/template" id="bannerTemp">
+   <!--支持循环，需要重复图片节点-->
+   <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[data.length - 1].navigator_url}}"><img src="{{data[data.length - 1].image_src}}" /></a></div>
+   {{ each data value index}}
+   <div class="mui-slider-item"><a href="{{value.navigator_url}}"><img src="{{value.image_src}}" /></a></div>
+   {{/each}}
+   <!--支持循环，需要重复图片节点-->
+   <div class="mui-slider-item mui-slider-item-duplicate"><a href="{{data[0].navigator_url}}"><img src="{{data[0].image_src}}" /></a></div>
+</script>
 <script src="./lib/zepto/zepto.js"></script>
 <script src="./lib/arttemplate/template-web.js"></script>
 <script src="./lib/mui/js/mui.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/index.js"></script>
