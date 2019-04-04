@@ -1,0 +1,34 @@
+.layout {
+  height: 100vh;
+  width: 100vw;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+}
+.layout .pyg_header {
+  width: 100%;
+  height: 45px;
+  padding: 5px;
+  background-color: #fff;
+}
+.layout .pyg_content {
+  width: 100%;
+  flex: 1;
+  overflow: scroll;
+}
+.layout .pyg_footer {
+  width: 100%;
+  height: 50px;
+}
+.layout .pyg_footer a span:nth-of-type(1) {
+  margin-bottom: 2px;
+}
+.layout .pyg_footer .shoppingCart span {
+  margin-bottom: 0;
+  font-size: 24px;
+}
+.layout .pyg_footer .shoppingCart div {
+  font-size: 12px;
+}

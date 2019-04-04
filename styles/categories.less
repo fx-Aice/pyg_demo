@@ -1,0 +1,62 @@
+@import 'reset.less';
+@import './common.less';
+
+.pyg_content{
+    background-color: #fff;
+    display: flex;
+    .left_menu{
+        width: 100px;
+        overflow: hidden;
+        li{
+            height: 50px;
+            width: 100%;
+            text-align: center;
+            a{
+                display: block;
+                width: 100%;
+                height: 100%;
+                line-height: 50px;
+                font-size: 14px;
+                color: #333;
+                background-color: #eee;
+                border-bottom: 1px solid #888;
+                border-right: 1px solid #888;
+            }
+            &.active{
+                > a{
+                    color:red;
+                    background-color: #fff;
+                    border-right: none;
+                }
+            }
+        }
+       
+    }
+    .right_menu{
+        flex: 1;
+        overflow: hidden;
+        .cate{
+            padding: 10px 5px;
+            display: flex;
+            flex-wrap: wrap;
+            .title{
+                text-indent: 1em;
+                width: 100%;
+            }
+            a{
+                text-align: center;
+                display: block;
+                padding: 5px;
+                width: 33%;
+                img{
+                    width: 100%;
+                }
+                span{
+                    display: block;
+                    font-size: 14px;
+                    color: #333;
+                }
+            }
+        }
+    }
+}

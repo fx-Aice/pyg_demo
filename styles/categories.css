@@ -125,49 +125,59 @@ ul {
 .layout .pyg_footer .shoppingCart div {
   font-size: 12px;
 }
-.layout .pyg_content nav {
+.pyg_content {
+  background-color: #fff;
   display: flex;
-  padding: 10px;
-  background-color: #fff;
 }
-.layout .pyg_content nav a {
-  display: block;
-  width: 25%;
+.pyg_content .left_menu {
+  width: 100px;
+  overflow: hidden;
+}
+.pyg_content .left_menu li {
+  height: 50px;
+  width: 100%;
   text-align: center;
-  font-size: 14px;
 }
-.layout .pyg_content nav a img {
-  width: 50%;
-}
-.layout .pyg_content .goodsList {
-  margin-top: 10px;
-}
-.layout .pyg_content .goodsList .goodsItem .groupImg {
-  width: 100%;
-}
-.layout .pyg_content .goodsList .goodsItem .proBox {
-  width: 49%;
-  float: left;
-  background-color: #fff;
-  padding: 5px;
-  margin-bottom: 5px;
-}
-.layout .pyg_content .goodsList .goodsItem .proBox:nth-of-type(even) {
-  margin-left: 2%;
-}
-.layout .pyg_content .goodsList .goodsItem .proBox img {
-  width: 100%;
-}
-.layout .pyg_content .goodsList .goodsItem .proBox .proTitle {
-  font-size: 14px;
-  color: #000;
-}
-.layout .pyg_content .goodsList .goodsItem .proBox .proPrice {
-  font-size: 18px;
-  color: red;
-}
-.layout .pyg_content .goodsList .goodsItem .proBox .findGoods {
-  width: 80%;
+.pyg_content .left_menu li a {
   display: block;
-  margin: 5px auto;
+  width: 100%;
+  height: 100%;
+  line-height: 50px;
+  font-size: 14px;
+  color: #333;
+  background-color: #eee;
+  border-bottom: 1px solid #888;
+  border-right: 1px solid #888;
+}
+.pyg_content .left_menu li.active > a {
+  color: red;
+  background-color: #fff;
+  border-right: none;
+}
+.pyg_content .right_menu {
+  flex: 1;
+  overflow: hidden;
+}
+.pyg_content .right_menu .cate {
+  padding: 10px 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.pyg_content .right_menu .cate .title {
+  text-indent: 1em;
+  width: 100%;
+}
+.pyg_content .right_menu .cate a {
+  text-align: center;
+  display: block;
+  padding: 5px;
+  width: 33%;
+}
+.pyg_content .right_menu .cate a img {
+  width: 100%;
+}
+.pyg_content .right_menu .cate a span {
+  display: block;
+  font-size: 14px;
+  color: #333;
 }
