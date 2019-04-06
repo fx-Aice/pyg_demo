@@ -10,6 +10,7 @@ $(function () {
      */
     function render() {
         // 从localStorage取出存的cateLists
+        $('body').addClass('loadding');
         cateData = JSON.parse(localStorage.getItem('cateLists'));
         // 判断是否已经有了数据，并且和当前时间比较，没有超过一小时
         if (cateData && Date.now() - cateData.time < 60 * 60 * 1000) {
@@ -75,6 +76,7 @@ $(function () {
             if (imgTotal == 0) {
                 // 图片已经全部加载完毕，调用scroll，实现滑动
                 var rightScroll = new IScroll('.right_menu');
+                $('body').removeClass('loadding');
             }
         })
     }

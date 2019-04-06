@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../lib/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="../lib/mui/css/mui.css">
-    <link rel="stylesheet" href="../styles/categories.css">
+    <link rel="stylesheet" href="../styles/goodslist.css">
     <title>fx-品优购</title>
 </head>
 
@@ -21,16 +21,7 @@
         </div>
         <!-- 中部内容 -->
         <div class="pyg_content">
-            <div class="left_menu">
-                <ul class="menu_wrap">
-                    
-                </ul>
-            </div>
-            <div class="right_menu">
-                <div class="scroll_box">
-                  
-                </div>
-            </div>
+           
         </div>
         <!-- 底部 -->
         <div class="pyg_footer">
@@ -57,30 +48,9 @@
 </body>
 </html>
 
-<!-- 右边商品详情列表 -->
-<script type="text/template" id="rightListTemp" >
-    {{each children value index}}
-    <div class="cate">
-            <div class="title">{{value.cat_name}}</div>
-            {{each value.children v i}}
-            <a href="#">
-                <img src="http://157.122.54.189:9094{{v.cat_icon}}" alt="">
-                <span>{{v.cat_name}}</span>
-            </a>
-            {{/each}}
-        </div>
-    {{/each}}
-</script>
-<!-- 左边菜单列表模板 -->
-<script type="text/template" id="leftListTemp" >
-    {{each list value index}}
-    <li class="{{index==0?'active':''}}"><a href="javascript:;">{{value.cat_name}}</a></li>
-    {{/each}}
-</script>
-
 <script src="../lib/zepto/zepto.js"></script>
 <script src="../lib/arttemplate/template-web.js"></script>
 <script src="../lib/mui/js/mui.min.js"></script>
 <script src="../lib/iscroll/iscroll.js"></script>
 <script src="../js/common.js"></script>
-<script src="../js/categories.js"></script>
+<script src="../js/goodslists.js"></script>
