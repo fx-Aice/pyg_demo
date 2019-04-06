@@ -13,40 +13,102 @@
 
 <body>
     <div class="layout">
-        <!-- 顶部搜索框 -->
-        <div class="pyg_header">
-            <div class="mui-input-row mui-search">
-                <input type="search" class="mui-input-clear" placeholder="">
+        <!-- 侧滑导航根容器 -->
+        <div class="mui-off-canvas-wrap mui-draggable">
+            <!-- 菜单容器 -->
+            <aside class="mui-off-canvas-right">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!-- 菜单具体展示内容 -->
+                        <div class="search_goods">
+                            <div class="searchHead">
+                                <input class="query_text" type="text">
+                                <button class="query_btn">搜索</button>
+                            </div>
+
+                            <div class="searchBox">
+                                <button type="button" class="mui-btn mui-btn-danger clearAll">清空</button>
+                                <ul class="query_result">
+                                </ul>
+
+                                <a class="mui-ellipsis" href="">商品商品商品商品商品商品上爬上的点点滴滴</a>
+                                <a class="mui-ellipsis" href="">商品商品商品商品商品商品上爬上的点点滴滴</a>
+
+                                <a class="mui-ellipsis" href="">商品商品商品商品商品商品上爬上的点点滴滴</a>
+
+                                <a class="mui-ellipsis" href="">商品商品商品商品商品商品上爬上的点点滴滴</a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+            <!-- 主页面容器 -->
+            <div class="mui-inner-wrap">
+                <!-- 顶部搜索框 -->
+                <header id="header" class="mui-bar mui-bar-nav">
+                    <a href="./categories.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+                    <h1 class="mui-title">搜索</h1>
+                    <a href="javascript:;" class=" mui-icon mui-icon-search mui-pull-right"></a>
+                </header>
+                <!-- 中部内容 -->
+                <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!-- 主界面具体展示内容 -->
+                        <ul class="goodslist">
+
+
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- 底部 -->
+                <div class="pyg_footer">
+                    <nav class="mui-bar mui-bar-tab">
+                        <a class="mui-tab-item" href="../index.html">
+                            <span class="mui-icon mui-icon-home"></span>
+                            <span class="mui-tab-label">首页</span>
+                        </a>
+                        <a class="mui-tab-item  mui-active" href="#tabbar-with-chat">
+                            <span class="mui-icon mui-icon-list"></span>
+                            <span class="mui-tab-label">分类</span>
+                        </a>
+                        <a class="mui-tab-item shoppingCart" href="#tabbar-with-contact">
+                            <span class="fa fa-shopping-cart"></span>
+                            <div class="mui-tab-label">购物车</div>
+                        </a>
+                        <a class="mui-tab-item" href="#tabbar-with-map">
+                            <span class="mui-icon mui-icon-contact"></span>
+                            <span class="mui-tab-label">我的</span>
+                        </a>
+                    </nav>
+                </div>
             </div>
-        </div>
-        <!-- 中部内容 -->
-        <div class="pyg_content">
-           
-        </div>
-        <!-- 底部 -->
-        <div class="pyg_footer">
-            <nav class="mui-bar mui-bar-tab">
-                <a class="mui-tab-item" href="../index.html">
-                    <span class="mui-icon mui-icon-home"></span>
-                    <span class="mui-tab-label">首页</span>
-                </a>
-                <a class="mui-tab-item  mui-active" href="#tabbar-with-chat">
-                    <span class="mui-icon mui-icon-list"></span>
-                    <span class="mui-tab-label">分类</span>
-                </a>
-                <a class="mui-tab-item shoppingCart" href="#tabbar-with-contact">
-                    <span class="fa fa-shopping-cart"></span>
-                    <div class="mui-tab-label">购物车</div>
-                </a>
-                <a class="mui-tab-item" href="#tabbar-with-map">
-                    <span class="mui-icon mui-icon-contact"></span>
-                    <span class="mui-tab-label">我的</span>
-                </a>
-            </nav>
         </div>
     </div>
 </body>
+
 </html>
+
+<!-- 主页面容器中的商品列表模板 -->
+<script type="text/template" id="goodsListTemp">
+    {{each goods value index}}
+    <li>
+            <a href="./goodsDetail?gid={{value.goods_id}}">
+                <div class="left">
+                    <img src="{{value.goods_small_logo}}" alt="">
+                </div>
+                <div class="right">
+                    <span class="mui-ellipsis">
+                            {{value.goods_name}}
+                    </span>
+                    <p>￥{{value.goods_price}}</p>
+                </div>
+            </a>
+        </li>
+    {{/each}}
+</script>
 
 <script src="../lib/zepto/zepto.js"></script>
 <script src="../lib/arttemplate/template-web.js"></script>
