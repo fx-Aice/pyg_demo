@@ -5,7 +5,7 @@ $(function () {
     })
     // 发起ajax需要传的数据
     var data = {
-        cid: getParameter(location.search).cid,
+        cid: $.getParameter(location.search).cid,
         pagenum: 1,
         pagesize: 10
     }
@@ -20,6 +20,7 @@ $(function () {
                 contentover: "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
                 contentrefresh: "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
                 callback: function () {//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+                   data.pagenum = 1;
                     // 获取数据，渲染页面，刷新是直接用新数据覆盖
                     getGoodsList(function (result) {
                         var goodsListHtml = template('goodsListTemp', result.data);
@@ -41,11 +42,18 @@ $(function () {
                     data.pagenum++;
                     // 用数据追加到页面，而不是覆盖
                     getGoodsList(function (result) {
-                        var goodsListHtml = template('goodsListTemp', result.data);
-                        $('.goodslist').append(goodsListHtml);
-                        mui('#refreshContainer').pullRefresh().endPullupToRefresh();
-                        // 为了防止切换分类的时候，无法再上拉，所以在每次刷新的时候将上拉加载重新启用
-                        mui('#refreshContainer').pullRefresh().refresh(true)
+                        if(result.data.goods.length > 0){
+                            var goodsListHtml = template('goodsListTemp', result.data);
+                            $('.goodslist').append(goodsListHtml);
+                            mui('#refreshContainer').pullRefresh().endPullupToRefresh();
+                            // 为了防止切换分类的时候，无法再上拉，所以在每次刷新的时候将上拉加载重新启用
+                            mui('#refreshContainer').pullRefresh().refresh(true)
+                        } else{
+                            mui('#refreshContainer').pullRefresh().endPullupToRefresh(true);
+                            // 为了防止切换分类的时候，无法再上拉，所以在每次刷新的时候将上拉加载重新启用
+                            mui('#refreshContainer').pullRefresh().refresh(true)
+                        }
+                      
                     })
                 }
             }
@@ -59,7 +67,7 @@ $(function () {
     $('.query_btn').on('tap', function () {
         var query_text = $('.query_text').val();
         // console.log(query_text);
-        // renderGoods(query_text);
+        renderGoods(query_text);
         // 获取历史记录
         var queryHistoryArr = getQueryHistory();
         // 追加历史记录
@@ -80,9 +88,9 @@ $(function () {
 
     // 点击历史记录中的数据，进行查询
     $('.query_result').on('tap', 'li', function () {
-        console.log($(this).text());
+        // console.log($(this).text());
         // 根据点击的数据，发起请求
-        // renderGoods($(this).text());
+        renderGoods($(this).text());
     })
 
 
@@ -95,6 +103,8 @@ $(function () {
         obj.query = query;
         getGoodsList(function (result) {
             console.log(result);
+            var html = template('queryGoodsListsTemp', result.data);
+            $('.queryGoodsLists').html(html);
         }, obj)
     }
 
@@ -110,7 +120,7 @@ $(function () {
             data: $.extend(data, obj),
             dataType: 'json',
             success: function (result) {
-                console.log(result);
+                // console.log(result);
                 callback(result);
             }
         })
@@ -148,23 +158,3 @@ $(function () {
 
 
 
-/**
- * 通过url解析参数
- * @param {string} url   需要解析的url的search路径  ?id=2&name="abc"
- */
-function getParameter(url) {
-    // 创建变量，保存解析后的参数对象
-    var queryObj = {};
-    // 从第一位?开始开始截取，截取到最后
-    var queryStr = url.substring(1);
-    // 把字符串，按照'&'分割成数组
-    var queryArr = queryStr.split('&');
-    // 循环遍历该数组
-    queryArr.forEach(function (item) {
-        // 对数组中的每一项用 ‘=’ 分割成数组，存入对象中
-        var tempArr = item.split('=');
-        // tempArr[0]代表等号前面的属性，tempArr[1]里面是值
-        queryObj[tempArr[0]] = tempArr[1];
-    })
-    return queryObj;
-}

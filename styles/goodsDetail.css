@@ -148,95 +148,64 @@ ul {
   z-index: 101;
   animation: fa-spin 1s infinite linear;
 }
-.layout #header {
-  padding: 0 5px;
-  background-color: #0094ff;
-}
-.layout #header a,
-.layout #header h1 {
-  color: #fff;
-}
-.layout .search_goods .searchHead {
-  padding: 5px;
-  background-color: #ccc;
-  overflow: hidden;
-}
-.layout .search_goods .searchHead input {
-  float: left;
-  padding-left: 10px;
-  width: 70%;
-  height: 30px;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  margin: 0;
-}
-.layout .search_goods .searchHead button {
-  float: left;
-  width: 30%;
-  height: 30px;
-  border: none;
-  border-radius: 0;
-  background-color: #0094ff;
-  color: #fff;
-}
-.layout .search_goods .searchBox {
-  padding: 5px;
+.layout .pyg_content {
   background-color: #fff;
 }
-.layout .search_goods .searchBox button {
-  margin: 5px 0;
+.layout .pyg_content .mui-scroll-wrapper {
+  padding: 45px 0 50px 0;
 }
-.layout .search_goods .searchBox ul {
-  width: 100%;
-  overflow: hidden;
-}
-.layout .search_goods .searchBox ul li {
-  float: left;
-  margin-right: 2px;
-  background-color: #eee;
-  padding: 5px;
-  font-size: 14px;
-  margin-bottom: 2px;
-}
-.layout .search_goods .searchBox a {
-  display: block;
-  width: 100%;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-.layout .goodslist {
-  width: 100%;
-}
-.layout .goodslist li {
-  width: 100%;
+.layout .pyg_content .goods_name {
   padding: 10px 5px;
-  background-color: #fff;
-  margin-bottom: 5px;
-}
-.layout .goodslist li a {
-  display: flex;
-  width: 100%;
-}
-.layout .goodslist li a > div {
-  width: 50%;
-}
-.layout .goodslist li a .left img {
-  display: block;
-  width: 70%;
-  margin: 0 auto;
-}
-.layout .goodslist li a .right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  font-size: 16px;
-}
-.layout .goodslist li a .right span {
-  display: block;
-  width: 100%;
+  font-size: 14px;
   color: #333;
 }
-.layout .goodslist li a .right p {
+.layout .pyg_content .goods_price {
+  padding: 5px;
+  font-size: 20px;
   color: #f00;
+}
+.layout .pyg_content .goods_choose li {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  display: flex;
+}
+.layout .pyg_content .goods_choose li span {
+  font-size: 13px;
+}
+.layout .pyg_content .goods_choose li span:nth-of-type(1) {
+  flex: 1;
+  color: #bbb;
+}
+.layout .pyg_content .goods_choose li span:nth-of-type(2) {
+  flex: 3;
+  color: #333;
+}
+.layout .pyg_content .goods_info li {
+  width: 100%;
+  padding: 5px;
+}
+.layout .pyg_content .goods_info li div {
+  font-size: 14px;
+  color: #999;
+  padding: 5px;
+}
+.layout .pyg_content .goods_info li div:nth-of-type(1) {
+  border-bottom: 1px solid #333;
+}
+.layout .pyg_content .goods_info li div:nth-of-type(2) {
+  display: flex;
+}
+.layout .pyg_content .goods_info li div:nth-of-type(2) span:nth-of-type(1) {
+  flex: 2;
+}
+.layout .pyg_content .goods_info li div:nth-of-type(2) span:nth-of-type(2) {
+  flex: 4;
+}
+.layout .pyg_footer span button {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
 }
