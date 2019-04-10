@@ -22,18 +22,18 @@ $(function () {
                 username, password
             },
             success: function (result) {
-                    console.log(result);
-                    // 登录成功
+                console.log(result);
+                // 登录成功
                 if (result.meta.status == 200) {
                     // 登录成功 ，存token
                     sessionStorage.setItem('pyg_token', result.data.token);
                     // 获取由跳转到登录的页面的上个href，为了方便登录成功后跳转回去
-                    var redirectUrl = unescape($.getParameter(location.search).redirectUrl)
+                    var redirectUrl = unescape($.getParameter(location.search).redirectUrl);
                     // 若没有这个参数，登录成功后，直接跳到主页面
-                    if (redirectUrl) {
+                    if (redirectUrl != 'undefined') {
                         location.href = redirectUrl;
                     } else {
-                        location.href = './index.html';
+                        location.href = '../index.html';
                     }
                 } else {
                     console.log('登录失败')

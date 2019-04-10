@@ -52,7 +52,9 @@ $(function () {
             $.ajax({
                 url: 'my/cart/add',
                 type: 'post',
-                data: JSON.stringify(info),
+                data: {
+                    info: JSON.stringify(info)
+                },
                 dataType: 'json',
                 success: function (result) {
                     // console.log(result)
@@ -62,8 +64,17 @@ $(function () {
                         location.href = './login.html?redirectUrl=' + escape(location.href)
                     }
                     else {
+                        console.log(result)
                         // 加购成功
-                        mui.toast('成功加入购物车')
+                        mui.confirm('成功加入购物车，是否立即查看', '温馨提示', ['跳转', '取消'], function (e) {
+                            if (e.index == 0) {
+                                // 跳到购物车
+                                console.log('跳转');
+                                location.href = './cart.html';
+                            } else {
+                                // 不作为
+                            }
+                        })
                     }
                 }
             })

@@ -1,0 +1,153 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+ol,
+ul {
+  list-style: none;
+}
+.layout {
+  height: 100vh;
+  width: 100vw;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #eee;
+}
+.layout .pyg_header {
+  width: 100%;
+  height: 45px;
+  padding: 5px;
+  background-color: #fff;
+}
+.layout .pyg_content {
+  width: 100%;
+  flex: 1;
+  overflow: scroll;
+}
+.layout .pyg_footer {
+  width: 100%;
+  height: 50px;
+}
+.layout .pyg_footer a span:nth-of-type(1) {
+  margin-bottom: 2px;
+}
+.layout .pyg_footer .shoppingCart span {
+  margin-bottom: 0;
+  font-size: 24px;
+}
+.layout .pyg_footer .shoppingCart div {
+  font-size: 12px;
+}
+.loadding::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: .5;
+  content: "";
+  z-index: 100;
+}
+.loadding::after {
+  font: normal normal normal 14px/1 FontAwesome;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  margin-left: -50px;
+  font-size: 100px;
+  color: #0094ff;
+  content: "\f013";
+  z-index: 101;
+  animation: fa-spin 1s infinite linear;
+}
+.layout .pyg_content {
+  margin-top: 50px;
+}

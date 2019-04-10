@@ -1,0 +1,129 @@
+@import 'reset.less';
+@import './common.less';
+
+
+.layout{
+    .pyg_content{
+        // margin-top: 50px;
+        .mui-scroll-wrapper{
+            padding: 45px 0 50px 0;
+         }
+        .title{
+            font-size: 14px;
+            color: #333;
+        }
+        .address{
+            margin-top: 10px;
+            padding: 0 10px;
+            >div{
+                &:nth-of-type(2){
+                    background-color: #fff;
+                    padding: 5px 0;
+                    width: 100%;
+                    display: flex;
+                    .left{
+                        flex: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    .right{
+                        flex: 5;
+                        display: flex;
+                        flex-direction: column;
+                        div{
+                            font-size: 14px;
+                            color: #333;
+                        }
+                        span{
+                            font-size: 12px;
+                            color: #888;
+                        }
+                    }
+                }
+            }
+        }
+        .totalPrice{
+            padding: 0 10px;
+            margin-top: 10px;
+            >div{
+                &:nth-of-type(2){
+                    background-color: #fff;
+                    padding: 10px 5px;
+                    display: flex;
+                    justify-content:space-between;
+                    font-size: 14px;
+                    .left{
+                        flex: 1;
+                        span{
+                            padding-left: 5px;
+                            color: red;
+                        }
+                    }
+                    .right{
+                        color: #007aff;
+                    }
+                }
+            }
+            
+        }
+        .order{
+            padding: 0 10px;
+            margin-top: 10px;
+            .order_list{
+                background-color: #fff;
+                .order_item{
+                    display: flex;
+                    border-bottom: 1px dashed #ccc;
+                    >div{
+                        &:nth-of-type(1){
+                            flex: 2;
+                            input{
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                        }
+                        &:nth-of-type(2){
+                            flex: 4;
+                            display: flex;
+                            align-items: center;
+                            img{
+                                display: block;
+                                margin: 0 auto;
+                                width: 80%;
+                            }
+                        }
+                        &:nth-of-type(3){
+                            padding: 10px 5px;
+                            flex: 5;
+                            font-size: 14px;
+                            .mui-numbox{
+                                margin-top: 10px;
+                            }
+                            .price{
+                                font-size: 16px;
+                                padding: 7px 5px;
+                                span{
+                                    float: right;
+                                    font-size: 14px;
+                                    color: #888;
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 通过给body的类名，控制元素的隐藏和显示
+.toggleElement{
+    .goodsDel,.order_checkbox,.mui-numbox{
+        display: none;
+    }
+    .order_num{
+        display: block !important;
+    }
+}
